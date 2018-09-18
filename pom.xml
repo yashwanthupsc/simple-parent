@@ -5,6 +5,8 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>simple-parent</artifactId>
+  <groupId>org.sonatype.mavenbook.multi</groupId>
+  <version>0.8-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Multi Chapter Simple Parent Project</name>
  
