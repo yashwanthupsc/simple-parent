@@ -52,12 +52,12 @@
         <activeByDefault>true</activeByDefault>
       </activation>
      <properties>
-     <sonar.jdbc.url>jdbc:postgresql://172.17.0.2/sonar</sonar.jdbc.url>
+     <sonar.jdbc.url>jdbc:mysql://http://100.24.39.148/sonar</sonar.jdbc.url>
       <sonar.jdbc.username>sonar</sonar.jdbc.username>
       <sonar.jdbc.password>sonar</sonar.jdbc.password>
      <!-- Optional URL to server. Default value is http://localhost:9000 -->
      <sonar.host.url>
-     http://192.168.43.227:9000
+     http://100.24.39.148:9000
      </sonar.host.url>
     </properties>
   </profile>
