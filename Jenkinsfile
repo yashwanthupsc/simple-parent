@@ -8,7 +8,7 @@ pipeline{
                               }
                          stage('Build')
                               {
-                               steps{sh 'mvn clean install sonar:sonar'}
+                               steps{sh 'mvn clean install'}
                               }
                         }
         }
