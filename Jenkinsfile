@@ -13,7 +13,7 @@ pipeline {
 			    }
                 stage('Deploying') {
                     steps {
-                        sh 'Deploying'
+                        echo 'Deploying'
                     }
                 }
 			}
@@ -35,13 +35,16 @@ pipeline {
 				}
 				stage('Deploying') {
 					steps {
-						sh 'Development Branch Deployment'
+						echo 'Development Branch Deployment'
 					}
 				}
                 
             }
         }
         stage('Release') {
+	    when {
+		branch 'Release'
+	    }    
             stages {
                 stage('Build') {
                     steps {
@@ -50,7 +53,7 @@ pipeline {
                 }
                 stage('Deploying') {
                     steps {
-                        sh 'Deploying'
+                        echo 'Deploying'
                         sh 'cp target/*.war /home/yashu/'
                     }
                 }
