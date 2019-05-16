@@ -54,7 +54,7 @@ pipeline {
                 stage('Deploying') {
                     steps {
                         echo 'Deploying'
-                        sh 'cp target/*.war /home/yashu/'
+                        sh 'cp **/target/*.war /home/yashu/'
                     }
                 }
             }
