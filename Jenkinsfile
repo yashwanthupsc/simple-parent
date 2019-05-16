@@ -1,14 +1,44 @@
 pipeline{
         agent any
-		stages
-			{
-                         stage('Checkout')
-                              {
-                               steps{checkout scm}
+	stages {
+                 stage('master') {
+				  when {
+					      branch 'master'
+				      }       
+				      stages {
+					      stage('Build') {
+						      steps {
+							      sh 'mvn clean install'
+						      }
+					      }
+					      stage('Deploying') {
+						      steps {
+							     sh 'Deploying'
+						      }
+					      }
+				      }
                               }
-                         stage('Build')
-                              {
-                               steps{sh 'mvn clean install'}
+                         stage('Development') {
+				      when {
+					      branch 'Development'
+				      }
+				      stages {
+					      stage('Build') {
+						      steps {
+							      sh 'mvn clean install -DskipTests'
+						      }
+					      }
+					      stage('Test') {
+						      steps {
+							      sh 'mvn test'
+						      }
+					      }
+					      stage('Deploying') {
+						      steps {
+							      sh 'Development Branch Deployment'
+						      }
+					      }
+				      }
                               }
                         }
         }
